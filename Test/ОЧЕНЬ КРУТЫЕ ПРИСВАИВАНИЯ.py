@@ -28,6 +28,33 @@ for i in "Qzuipo!bxftpnf\" "*10:
 [[print(i, n) for i in range(10)] for n in [input()]]
 n = input(); [print(i, n) for i in range(10)]
 [[print(f"Квадрат числа {i} равен {i**2}") for i in range(a+1)] for a in [int(input())]]
+
+# на входе два слова имя и фамилия тут проверка на капиталайз каждого слова
+# типо если оба слова начинаются с большой буквы то да
+s = input()
+print(('NO', 'YES')[s == s.title()])
+
+#обрати внимание на эндвиз первым аргументом принимает два значения
+print("YES" if input().endswith(('.com','.ru')) else 'NO')
+
+# кутой лист компрехеншон с преобразованием из числа в знак ASCII
+print(*[chr(i) for i in range(int(input()),int(input())+1)], end=' ' )
     
+#На вход программе подается строка текста. Напишите программу, которая выводит индекс второго вхождения буквы «f». 
+# Если буква «f» встречается только один раз, выведите число -1, а если не встречается ни разу, выведите число -2.
+# Формат входных данных 
+# На вход программе подается строка текста.
+print(-2 + 1*min(2, len(indexes := [i for i, x in enumerate(input()) if x == 'f'])) or indexes[1])
+
+print((lambda x: [i for i in range(1, x + 1) if x % i == 0])(int(input())))
 
 
+def is_password_good(password):
+    upp = [i for i in password if i.isupper()]
+    low = [i for i in password if i.islower()]
+    dig = [i for i in password if i.isdigit()]
+    return all([len(password) >= 8, upp, low, dig])
+
+
+txt = input()
+print(is_password_good(txt))

@@ -9,16 +9,14 @@
 import string
 
 
-def is_pangram(s):
+def is_pangram0(s):
     return not set('abcdefghijklmnopqrstuvwxyz') - set(s.lower())
 # ПОДСМОТРЕЛ В ИНЕТЕ SET Это множество из него можно вычитать другое множество
 
 
-def is_pangram(s):
-    return set(string.lowercase) <= set(s.lower())
 
 
-def is_pangram(s):
+def is_pangram2(s):
     s = s.lower()
     for char in 'abcdefghijklmnopqrstuvwxyz':
         if char not in s:
@@ -26,7 +24,7 @@ def is_pangram(s):
     return True
 
 
-def is_pangram(s):
+def is_pangram3(s):
     # ISSUBSET сравнивает заданное множеством алфавита в нижнем регистре
     return set(string.ascii_lowercase).issubset(s.lower())
 

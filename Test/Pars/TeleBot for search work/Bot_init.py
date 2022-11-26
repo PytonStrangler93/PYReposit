@@ -20,18 +20,14 @@ def start(message):
 def work(message):
     mess = '\n'.join(list)
     bot.send_message(
-        message.chat.id,
-        f"<b>Вакансии WORK:</b>\n{mess}",
-        parse_mode='html')
+        message.chat.id, f"<b>Вакансии WORK:</b>\n{mess}", parse_mode='html')
 
 
 @bot.message_handler(commands=['rabota'])
 def work(message):
     mess2 = '\n'.join(list2)
     bot.send_message(
-        message.chat.id,
-        f"<b>Вакансии RABOTA:</b>\n{mess2}",
-        parse_mode='html')
+        message.chat.id, f"<b>Вакансии RABOTA:</b>\n{mess2}", parse_mode='html')
 
 
 bot.polling(none_stop=True)
